@@ -1,0 +1,103 @@
+// TECHNICAL MIXINS
+
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url('../fonts/#{$file_name}.woff') format('woff'), url('../fonts/#{$file_name}.woff2') format('woff2');
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+// GLOBAL STYLES
+
+@import 'fonts';
+@import 'vars.scss';
+@import 'reset.scss';
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+	img {
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+input[type='search']::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	height: 1em;
+	width: 1em;
+	border-radius: 50em;
+	background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+	background-size: contain;
+	opacity: 0;
+	pointer-events: none;
+	cursor: pointer;
+}
+
+input[type='search']:focus::-webkit-search-cancel-button {
+	opacity: 0.5;
+	pointer-events: all;
+	// For light inputs
+	filter: invert(1);
+}
+
+[hidden] {
+	display: none !important;
+}
+
+// ===== GENERAL ======
+
+body {
+	&._lock {
+		overflow: hidden;
+	}
+
+	&.using-mouse *:focus,
+	&.touch *:focus {
+		outline: none;
+	}
+}
+
+.wrapper {
+	position: relative;
+	z-index: 1000;
+}
+
+.container {
+	max-width: $containerWidth + 40px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+
+	@media (max-width: 991px) {
+		max-width: $containerWidth + 20px;
+		padding: 0 10px;
+	}
+	@media (max-width: 575px) {
+		max-width: $containerWidth + 10px;
+		// padding: 0 5px;
+	}
+}
+
+.btn {
+	display: inline-block;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+@import 'header.scss';
+@import 'burger.scss';
+// @import 'yourfile.scss';
+@import 'footer.scss';
