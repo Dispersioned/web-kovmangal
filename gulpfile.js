@@ -159,8 +159,17 @@ function fontsStyle() {
 					// TODO: finish weights object
 					let fontPrimaryName = fontname.split('-')[0];
 					let weights = {
+						thin: 100,
+						extralight: 200,
+						light: 300,
+						semilight: 350,
 						regular: 400,
+						medium: 500,
+						semibold: 600,
 						bold: 700,
+						extrabold: 800,
+						black: 900,
+						extrablack: 950,
 					};
 					let fontWeight;
 

@@ -59,6 +59,9 @@ input[type='search']:focus::-webkit-search-cancel-button {
 // ===== GENERAL ======
 
 body {
+	color: $black;
+	font-family: 'Gillroy', sans-serif;
+
 	&._lock {
 		overflow: hidden;
 	}
@@ -92,10 +95,68 @@ body {
 }
 
 .btn {
+	position: relative;
 	display: inline-block;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
+	overflow: hidden;
+	border-radius: 6px;
+
+	font-size: 14px;
+	line-height: calc(16 / 14);
+	color: $white;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: all .3s ease;
+
+	background-color: $fire-red;
+
+	@media (min-width: 100px) {
+		&:hover {
+			background-color: $dark-red;
+		}
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		display: block;
+		width: 24px;
+		height: 100%;
+		background-color: $dark-red;
+		transition: all .3s ease;
+
+		clip-path: url(#btn-decoration);
+	}
+
+	&::before {
+		left: 0;
+	}
+
+	&::after {
+		right: 0;
+		transform: scale(-1, 1);
+	}
+
+	@media (min-width: 991px) {
+		&:hover {
+			&::before,
+			&::after {
+				background-color: $fire-red;
+			}
+		}
+	}
+
+	&--big {
+		padding: 18px 23px;
+	}
+
+	&--small {
+		padding: 15px 40px;
+	}
 }
 
 .fullscreen {

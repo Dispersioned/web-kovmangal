@@ -1,0 +1,154 @@
+.header {
+	height: 100px;
+
+	// .header__body
+
+	&__body {
+		display: grid;
+		grid-template-columns: fit-content(100%) 1fr repeat(2, fit-content(100%));
+		padding: 15px 0;
+		align-items: center;
+	}
+
+	// .header__logo
+
+	&__logo {
+		width: 44px;
+		height: 73px;
+	}
+
+	// .header__contacts
+
+	&__contacts {
+		grid-column: 3 / 4;
+	}
+
+	// .header__burger
+
+	&__burger {
+		display: none;
+	}
+
+	// .header__burger-title
+
+	&__burger-title {
+	}
+
+	// .header__burger-icon
+
+	&__burger-icon {
+	}
+
+	// .header__nav
+
+	&__nav {
+	}
+}
+
+.contacts {
+	display: flex;
+	align-items: center;
+
+	// .contacts__number
+
+	&__number {
+		position: relative;
+		color: $black;
+		font-size: 18px;
+		line-height: calc(44 / 18);
+		font-weight: 600;
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: .3em;
+			width: 0;
+			height: 2px;
+			background: $black;
+			transition: all .3s ease;
+		}
+
+		@media (min-width: 991px) {
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -25px;
+			top: 50%;
+			display: block;
+			transform: translateY(-50%);
+			background: url('../img/icons/contacts/phone.svg');
+			width: 18px;
+			height: 18px;
+		}
+	}
+
+	// .contacts__social
+
+	&__social {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 50px;
+
+		@media (min-width: 991px) {
+			> * {
+				transition: all 0.15s ease;
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		> :not(:first-child) {
+			margin-left: 25px;
+		}
+	}
+
+	// .contacts__whatsapp
+
+	&__whatsapp {
+		width: 20px;
+		height: 20px;
+	}
+
+	// .contacts__telegram
+
+	&__telegram {
+		width: 20px;
+		height: 16px;
+	}
+
+	// .contacts__viber
+
+	&__viber {
+		width: 20px;
+		height: 20px;
+	}
+}
+
+.nav {
+	display: none;
+
+	// .nav__menu
+
+	&__menu {
+	}
+
+	// .nav__menu-item
+
+	&__menu-item {
+	}
+
+	// .nav__menu-link
+
+	&__menu-link {
+	}
+}
