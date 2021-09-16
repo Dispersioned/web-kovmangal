@@ -123,6 +123,8 @@ const selectInit = function () {
 	const selectBtn = document.querySelector('.select__icon');
 	const selectBody = document.querySelector('.select__body');
 
+	if(!selectHeader) return;
+
 	const toggleSelectOptions = function () {
 		selectBtn.classList.toggle('_active');
 		selectHeader.classList.toggle('_active');
