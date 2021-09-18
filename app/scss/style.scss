@@ -90,7 +90,7 @@ body {
 	}
 	@media (max-width: 575px) {
 		max-width: $containerWidth + 10px;
-		// padding: 0 5px;
+		padding: 0 5px;
 	}
 }
 
@@ -160,7 +160,7 @@ body {
 }
 
 .fullscreen {
-	background: url('../img/background-line.svg') center / cover;
+	background: url('../img/header/background-line-1.svg') center / cover;
 	min-height: 100vh;
 }
 
