@@ -1,19 +1,39 @@
 .header__burger {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate(calc(-100% - 90px), -50%);
 	display: grid;
 	grid-auto-flow: column;
 	grid-gap: 10px;
+
 	cursor: pointer;
+	z-index: 500;
+
+	@media (max-width: 1199px) {
+		transform: translate(calc(-100% - 50px), -50%);
+	}
+	@media (max-width: 767px) {
+		grid-template-columns: fit-content(100%) 1fr repeat(2, fit-content(100%));
+		position: static;
+		transform: translate(0, 0);
+		width: 40px;
+	}
 }
 
 .header__burger-title {
 	width: 100%;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	&._active {
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
 		cursor: default;
 		width: 0;
+	}
+
+	@media (max-width: 767px) {
+		display: none;
 	}
 }
 
@@ -23,8 +43,8 @@
 	@media (max-width: 10000px) {
 		position: relative;
 		display: block;
-		transition: all .3s ease;
-		top: .2em;
+		transition: all 0.3s ease;
+		top: 0.2em;
 		width: 40px;
 		height: 8px;
 
@@ -35,7 +55,7 @@
 			left: 0;
 			height: 2px;
 			background-color: $burgerColor;
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 		}
 
 		&::before {

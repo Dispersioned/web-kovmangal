@@ -81,16 +81,22 @@ body {
 .container {
 	max-width: $containerWidth + 40px;
 	width: 100%;
-	padding: 0 20px;
+	padding: 0 20px 0 200px;
 	margin: 0 auto;
 
+	@media (max-width: 1199px) {
+		max-width: $containerWidth + 30px;
+		padding: 0 15px 0 180px;
+	}
 	@media (max-width: 991px) {
 		max-width: $containerWidth + 20px;
-		padding: 0 10px;
+		padding: 0 10px 0 155px;
+	}
+	@media (max-width: 767px) {
+		padding: 0 20px;
 	}
 	@media (max-width: 575px) {
-		max-width: $containerWidth + 10px;
-		padding: 0 5px;
+		padding: 0 20px;
 	}
 }
 
