@@ -211,7 +211,9 @@
 	background-position: 0 0, 0 0, 100% 100%;
 	background-repeat: repeat, no-repeat, no-repeat;
 
-	transition: all 0.3s ease;
+	// don't use trf all because lockPadding margin change
+	transition: transform 0.3s ease;
+	// transition: all 0.3s ease;
 	z-index: 400;
 
 	&._active {
