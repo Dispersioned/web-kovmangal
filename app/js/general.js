@@ -56,3 +56,17 @@ function lockPaddingInit() {
 if (document.querySelector('body').classList.contains('mouse')) {
 	lockPaddingInit();
 }
+
+// factory video onclick controls appear
+function factoryVideoInit() {
+	const factoryVideo = document.getElementById('factory-video');
+	const videoStartBtn = document.querySelector('.factory__video-play-btn');
+
+	videoStartBtn.addEventListener('click', function (e) {
+		videoStartBtn.setAttribute('hidden', 'true');
+		factoryVideo.setAttribute('controls', 'true')
+		factoryVideo.play();
+	});
+}
+
+factoryVideoInit();

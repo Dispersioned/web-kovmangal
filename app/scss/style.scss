@@ -164,6 +164,12 @@ body {
 	}
 }
 
+.section-content {
+	@media (max-width: 767px) {
+		padding-left: 30px;
+	}
+}
+
 .section-heading {
 	font-family: 'Viaoda Libre', sans-serif;
 	font-size: 80px;
@@ -229,21 +235,26 @@ body {
 	line-height: calc(46 / 46);
 	color: $fire-red;
 	font-weight: 300;
-	
+
 	@media (max-width: 991px) {
 		font-size: 34px;
 	}
 }
 
-// apply for construction div > img where should be background ornament while image loading
+.section-text {
+	font-family: 'Gilroy', sans-serif;
+	font-size: 18px;
+	line-height: calc(28 / 18);
+	font-weight: 600;
+	color: $black;
+}
+
+// apply for construction div > el where background ornament should be while preview loading
 .img-bg-pattern {
 	position: relative;
-
 	background: #ebe0d3;
-	border: 7px solid $white;
-	padding: 50px 30px;
-
 	z-index: 210;
+	min-width: 100%;
 
 	&::before {
 		content: '';
@@ -262,8 +273,14 @@ body {
 
 	img {
 		position: relative;
+		width: 100%;
+		height: 100%;
 		left: 50%;
 		transform: translateX(-50%);
+		z-index: 210;
+	}
+
+	video {
 		z-index: 210;
 	}
 }
@@ -276,5 +293,6 @@ body {
 @import 'header.scss';
 @import 'burger.scss';
 @import 'first-screen.scss';
+@import 'factory.scss';
 // @import 'yourfile.scss';
 @import 'footer.scss';

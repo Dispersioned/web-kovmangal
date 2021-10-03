@@ -1,0 +1,149 @@
+.factory {
+	padding-top: 200px;
+	background: url('../img/factory/background-line-1.svg') center / contain no-repeat;
+
+	@media (max-width: 1199px) {
+		padding-top: 150px;
+	}
+	@media (max-width: 991px) {
+		padding-top: 90px;
+	}
+	@media (max-width: 479px) {
+		padding-top: 50px;
+	}
+
+	// .factory__body
+
+	&__body {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: 4fr 7fr;
+		grid-gap: 40px;
+
+		@media (max-width: 1199px) {
+			grid-gap: 20px;
+		}
+		@media (max-width: 991px) {
+			grid-template-columns: 1fr;
+			grid-auto-flow: row;
+		}
+	}
+
+	// .factory__content
+
+	&__content {
+		padding-top: 50px;
+		background: url('../img/factory/content-bg-img.svg') right top / 65% no-repeat;
+
+		@media (max-width: 991px) {
+			padding-top: 0;
+			background-size: contain;
+			background-position: 20% top;
+		}
+	}
+
+	// .factory__heading-info
+
+	&__heading-info {
+	}
+
+	// .factory__heading
+
+	&__heading {
+	}
+
+	// .factory__text
+
+	&__text {
+		margin-top: 30px;
+	}
+
+	// .factory__images
+
+	&__images {
+		display: grid;
+		grid-auto-flow: column;
+		// to prevent img-bg-pattern from stretching
+		justify-items: left;
+		grid-template-columns: fit-content(100%) 1fr;
+		grid-gap: 135px;
+
+		@media (max-width: 1400px) {
+			grid-gap: 90px;
+		}
+		@media (max-width: 1199px) {
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 50px;
+		}
+		@media (max-width: 576px) {
+			grid-template-columns: 1fr;
+			grid-auto-flow: row;
+			grid-gap: 25px;
+		}
+	}
+
+	// .factory__img
+
+	&__img {
+		align-self: flex-end;
+		border: 7px solid #ebe0d3;
+
+		@media (max-width: 991px) {
+			align-self: flex-start;
+		}
+		@media (max-width: 576px) {
+			min-width: 0;
+			width: calc(100% - 80px);
+			margin: 0 auto;
+		}
+	}
+
+	// .factory__video
+
+	&__video {
+		position: relative;
+		bottom: 40px;
+		align-self: flex-end;
+		padding: 0 0 155% 0;
+		aspect-ratio: 0.63;
+		border: 7px solid #ebe0d3;
+
+		@media (max-width: 991px) {
+			align-self: flex-start;
+			bottom: 0;
+		}
+		@media (max-width: 576px) {
+			grid-row: 1 / 2;
+		}
+
+		video {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .factory__video-play-btn
+
+	&__video-play-btn {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		display: block;
+		transform: translate(-50%, -50%);
+		width: 80px;
+		height: 80px;
+		background: url('../img/factory/video-play-btn.svg');
+		cursor: pointer;
+		z-index: 210;
+
+		@media (min-width: 991px) {
+			&:hover {
+				filter: contrast(1.1);
+			}
+		}
+	}
+}
