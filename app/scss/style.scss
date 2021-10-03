@@ -247,6 +247,11 @@ body {
 	line-height: calc(28 / 18);
 	font-weight: 600;
 	color: $black;
+
+	@media (max-width: 767px) {
+		font-size: 16px;
+		line-height: calc(20 / 16);
+	}
 }
 
 // apply for construction div > el where background ornament should be while preview loading
@@ -254,7 +259,6 @@ body {
 	position: relative;
 	background: #ebe0d3;
 	z-index: 210;
-	min-width: 100%;
 
 	&::before {
 		content: '';
@@ -294,5 +298,6 @@ body {
 @import 'burger.scss';
 @import 'first-screen.scss';
 @import 'factory.scss';
+@import 'why-us.scss';
 // @import 'yourfile.scss';
 @import 'footer.scss';

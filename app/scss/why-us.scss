@@ -1,0 +1,132 @@
+.why-us {
+	padding: 170px 0 240px;
+	background: url('../img/why-us/background-line-1.svg') center 30% / 100% no-repeat, linear-gradient(180deg, rgba(251, 251, 253, 0) 0%, #FBFBFD 15.62%, $bg-color 84.37%, rgba(251, 251, 253, 0) 100%);
+	padding: 170px 0 240px;
+	overflow-x: hidden;
+
+	@media (max-width: 991px) {
+		padding: 100px 0 140px;
+	}
+
+	// .why-us__body
+
+	&__body {
+	}
+
+	// .why-us__content
+
+	&__content {
+		max-width: 70%;
+
+		@media (max-width: 1199px) {
+			max-width: 100%;
+		}
+	}
+
+	// .why-us__heading-info
+
+	&__heading-info {
+	}
+
+	// .why-us__heading
+
+	&__heading {
+	}
+
+	// .why-us__text
+
+	&__text {
+		margin-top: 40px;
+		max-width: 60%;
+
+		@media (max-width: 991px) {
+			margin-top: 25px;
+			max-width: 100%;
+		}
+	}
+
+	// .why-us__advantages
+
+	&__advantages {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		margin-top: 35px;
+
+		@media (max-width: 1199px) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	// .why-us__advantages-list
+
+	&__advantages-list {
+		flex: 1 1 60%;
+	}
+
+	// .why-us__advantages-item
+
+	&__advantages-item {
+		position: relative;
+		display: block;
+		background: #f7f2ee;
+		padding: 30px 15px 30px 85px;
+		border-radius: 100px;
+		z-index: 110;
+
+		@media (max-width: 767px) {
+			padding: 20px 15px 20px 70px;
+		}
+
+		&:not(:first-child) {
+			margin-top: 20px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 40px;
+			top: 50%;
+			transform: translateY(-50%);
+			display: block;
+			width: 18px;
+			height: 22px;
+			background: url('../img/why-us/advantages-list-item-marker.svg');
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			display: block;
+			transform: translateY(-50%);
+			width: 1000vw;
+			height: 100%;
+			background-color: inherit;
+			z-index: 100;
+		}
+	}
+
+	// .why-us__advantages-list-text
+
+	&__advantages-list-text {
+		display: inline-block;
+		padding-left: 30px;
+		position: relative;
+		z-index: inherit;
+	}
+
+	// .why-us__advantages-img
+
+	&__advantages-img {
+		flex: 1 0 40%;
+		border: 7px solid #ebe0d4;
+
+		@media (max-width: 1199px) {
+			flex: 1 0 70%;
+			margin-bottom: 25px;
+		}
+	}
+}
