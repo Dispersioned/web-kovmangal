@@ -12,9 +12,11 @@ function lockPaddingInit() {
 				if (body.classList.contains('_lock')) {
 					body.style.marginRight = scrollbarWidth + 'px';
 					document.querySelector('.nav').style.paddingRight = scrollbarWidth + 'px';
+					document.querySelector('.header').style.paddingRight = scrollbarWidth + 'px';
 				} else {
 					body.style.removeProperty('margin-right');
 					document.querySelector('.nav').style.paddingRight = '0px';
+					document.querySelector('.header').style.paddingRight = '0px';
 				}
 			}
 		}

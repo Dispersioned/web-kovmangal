@@ -96,8 +96,8 @@
 
 .section-heading {
 	font-family: 'Viaoda Libre', sans-serif;
-	font-size: 80px;
-	line-height: calc(82 / 80);
+	font-size: 70px;
+	line-height: calc(90 / 80);
 	color: $black;
 	font-weight: 400;
 
@@ -219,11 +219,6 @@
 // div is used to increase specificity
 div.img-border-white {
 	border: 7px solid $white;
-}
-
-.fullscreen {
-	background: url('../img/header/background-line-1.svg') center / cover;
-	min-height: 100vh;
 }
 
 .list-item-content {
