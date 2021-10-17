@@ -213,12 +213,80 @@
 					<!-- /.container -->
 				</section>
 				<!-- /.delivery -->
+
+				<section class="contact-us">
+					<div class="container contact-us__container">
+						<div class="contact-us__body">
+							<div class="contact-us__content">
+								<h2 class="contact-us__heading section-heading">Посмотрите каталог и <span class="red">получите скидку до 30%</span> на Ваш первый заказ</h2>
+							</div>
+							<!-- /.contact-us__content -->
+							<form action="#" class="contact-us__form form-contact-us">
+								<h3 class="form-contact-us__heading">Укажите ваши контактные данные</h3>
+								<div class="form-contact-us__content">
+									<label class="form-contact-us__input">
+										<span class="form-contact-us__input-heading">Ваше имя</span>
+										<input type="text" name="name" placeholder="Например, Валерий" />
+									</label>
+									<div class="form-contact-us__messangers">
+										<span class="form-contact-us__input-heading">Удобный метод связи</span>
+										<div class="form-contact-us__messangers-list">
+											<div data-item-messanger="Telegram" class="form-contact-us__messangers-list-item">
+												<div class="form-contact-us__messangers-list-item-icon">
+													<img src="img/icons/telegram-icon.svg" alt="Telegram" />
+												</div>
+												<p class="form-contact-us__messangers-list-item-text">Telegram</p>
+												<input type="radio" name="messanger" value="telegram" />
+											</div>
+											<!-- /.form-contact-us__messangers-list-item -->
+											<div data-item-messanger="Whatsapp" class="form-contact-us__messangers-list-item _active">
+												<div class="form-contact-us__messangers-list-item-icon">
+													<img src="img/icons/whatsapp-icon.svg" alt="WhatsApp" />
+												</div>
+												<p class="form-contact-us__messangers-list-item-text">WhatsApp</p>
+												<input type="radio" name="messanger" value="whatsapp" checked />
+											</div>
+											<!-- /.form-contact-us__messangers-list-item -->
+											<div data-item-messanger="Viber" class="form-contact-us__messangers-list-item">
+												<div class="form-contact-us__messangers-list-item-icon">
+													<img src="img/icons/viber-icon.svg" alt="Viber" />
+												</div>
+												<p class="form-contact-us__messangers-list-item-text">Viber</p>
+												<input type="radio" name="messanger" value="viber" />
+											</div>
+											<!-- /.form-contact-us__messangers-list-item -->
+										</div>
+										<!-- ./form-contact-us__messangers-list -->
+									</div>
+									<label class="form-contact-us__input form-contact-us__input--messanger">
+										<span class="form-contact-us__input-heading form-contact-us__input-heading--messanger">Whatsapp</span>
+										<input type="tel" name="phone" />
+									</label>
+									<button class="form-contact-us__submit btn btn--small">отправить</button>
+									<div class="form-contact-us__privacy">
+										<label class="checkbox">
+											<input type="checkbox" name="privacy policy" value="true" required />
+											<span></span>
+										</label>
+										<span class="form-contact-us__privacy-text">Я ознакомлен с условиями <a href="#" class="form-contact-us__privacy-link">политики конфиденциальности</a></span>
+									</div>
+								</div>
+								<!-- /.form-contact-us__content -->
+							</form>
+							<!-- /.contact-us__form -->
+						</div>
+						<!-- /.contact-us__body -->
+					</div>
+					<!-- /.container contact-us__container -->
+				</section>
+				<!-- /.contact-us -->
 			</main>
 			<!-- /.main -->
 			@@include('_footer.html')
 		</div>
 		<!-- /.wrapper -->
 
+		<script src="https://unpkg.com/imask"></script>
 		<script src="js/script.min.js"></script>
 	</body>
 </html>
