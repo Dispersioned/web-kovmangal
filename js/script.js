@@ -491,9 +491,11 @@ function lockPaddingInit() {
 				if (body.classList.contains('_lock')) {
 					body.style.marginRight = scrollbarWidth + 'px';
 					document.querySelector('.nav').style.paddingRight = scrollbarWidth + 'px';
+					document.querySelector('.header').style.paddingRight = scrollbarWidth + 'px';
 				} else {
 					body.style.removeProperty('margin-right');
 					document.querySelector('.nav').style.paddingRight = '0px';
+					document.querySelector('.header').style.paddingRight = '0px';
 				}
 			}
 		}
@@ -550,76 +552,43 @@ function factoryVideoInit() {
 
 factoryVideoInit();
 ;
-function lockPaddingInit() {
-	const body = document.querySelector('body');
-	// Options for the observer (which mutations to observe)
-	// const config = { attributes: true, childList: true, subtree: true };
-	const config = { attributes: true };
-
-	// Callback function to execute when mutations are observed
-	const bodyScrollCallback = function (mutationsList, observer) {
-		// Use traditional 'for loops' for IE 11
-		for (const mutation of mutationsList) {
-			if (mutation.attributeName === 'class') {
-				if (body.classList.contains('_lock')) {
-					body.style.marginRight = scrollbarWidth + 'px';
-					document.querySelector('.nav').style.paddingRight = scrollbarWidth + 'px';
-				} else {
-					body.style.removeProperty('margin-right');
-					document.querySelector('.nav').style.paddingRight = '0px';
-				}
-			}
-		}
+function contactUsFormInit() {
+	const messangersColor = {
+		Whatsapp: '#4CAF50',
+		Telegram: '#039BE5',
+		Viber: '#7F40BD',
 	};
+	const list = document.querySelector('.form-contact-us__messangers');
+	const messangerInputHeading = document.querySelector('.form-contact-us__input--messanger .form-contact-us__input-heading');
 
-	// Create an observer instance linked to the bodyScrollCallback function
-	const observer = new MutationObserver(bodyScrollCallback);
+	if (list && messangerInputHeading) {
+		list.addEventListener('click', function (e) {
+			const elem = e.target.closest('.form-contact-us__messangers-list-item');
+			if (!elem) return;
 
-	// Start observing the target node for configured mutations
-	observer.observe(body, config);
+			const elemMessanger = elem.dataset.itemMessanger;
+			messangerInputHeading.textContent = elemMessanger;
+			messangerInputHeading.style.color = messangersColor[elemMessanger];
 
-	function getScrollbarWidth() {
-		// Creating invisible container
-		const outer = document.createElement('div');
-		outer.style.visibility = 'hidden';
-		outer.style.overflow = 'scroll'; // forcing scrollbar to appear
-		outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-		document.body.appendChild(outer);
+			if (elem.classList.contains('_active')) return;
 
-		// Creating inner element and placing it in the container
-		const inner = document.createElement('div');
-		outer.appendChild(inner);
+			const activeElem = list.querySelector('.form-contact-us__messangers-list-item._active');
+			activeElem.classList.remove('_active');
+			elem.classList.add('_active');
 
-		// Calculating difference between container's full width and the child width
-		const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-
-		// Removing temporary elements from the DOM
-		outer.parentNode.removeChild(outer);
-
-		return scrollbarWidth;
+			const activeElemRadio = activeElem.querySelector('input[type=radio]');
+			const elemRadio = elem.querySelector('input[type=radio]');
+			activeElemRadio.removeAttribute('checked');
+			elemRadio.setAttribute('checked', true);
+		});
 	}
 
-	const scrollbarWidth = getScrollbarWidth();
-
-	// Prevent nav content twitch on scrollbar appearing
-	// document.querySelector('.nav').style.paddingRight = scrollbarWidth + 'px';
+	const inputMask = document.querySelector('.form-contact-us__input--messanger input');
+	const maskOptions = {
+		mask: '+7 000 000-00-00',
+	};
+	const mask = IMask(inputMask, maskOptions);
 }
 
-if (document.querySelector('body').classList.contains('mouse')) {
-	lockPaddingInit();
-}
-
-// factory video onclick controls appear
-function factoryVideoInit() {
-	const factoryVideo = document.getElementById('factory-video');
-	const videoStartBtn = document.querySelector('.factory__video-play-btn');
-
-	videoStartBtn.addEventListener('click', function (e) {
-		videoStartBtn.setAttribute('hidden', 'true');
-		factoryVideo.setAttribute('controls', 'true')
-		factoryVideo.play();
-	});
-}
-
-factoryVideoInit();
+contactUsFormInit();
 ;
