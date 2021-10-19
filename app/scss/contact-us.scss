@@ -25,12 +25,15 @@
 	&__content {
 		position: relative;
 		margin-left: 55px;
-		padding: 45px 25px 45px 90px;
+		padding: 45px 25px 45px 25px;
 		background: $bg-svg-icon;
 
 		@media (max-width: 991px) {
-			padding: 45px 25px 70px 90px;
+			padding: 45px 15px 70px 15px;
 			margin-left: 0;
+		}
+		@media (max-width: 575px) {
+			padding: 30px 5px;
 		}
 
 		&::before {
@@ -50,10 +53,14 @@
 		max-width: 50%;
 		margin-top: 0 !important;
 		padding-right: 15px;
+		margin-left: 55px;
 
 		@media (max-width: 991px) {
 			max-width: 100%;
 			padding-right: 0;
+		}
+		@media (max-width: 767px) {
+			margin-left: 40px;
 		}
 	}
 
