@@ -1,15 +1,15 @@
 .delivery {
-	margin-top: 200px;
+	padding-top: 200px;
 	background: url(../img/delivery/background-line-1.svg) center / 100% 100% no-repeat;
 
 	@media (max-width: 1199px) {
-		margin-top: 150px;
+		padding-top: 150px;
 	}
 	@media (max-width: 991px) {
-		margin-top: 110px;
+		padding-top: 110px;
 	}
 	@media (max-width: 767px) {
-		margin-top: 90px;
+		padding-top: 90px;
 	}
 
 	// .delivery__container
