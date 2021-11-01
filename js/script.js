@@ -248,7 +248,6 @@ function initOurWorksSlider() {
 			const styles = window.getComputedStyle(normalContainer);
 			const marginLeft = parseInt(styles.marginLeft);
 			const paddingLeft = parseInt(styles.paddingLeft);
-			console.log('true');
 
 			ourWorksSliderContainer.style.marginLeft = marginLeft + paddingLeft + 'px';
 		}
@@ -259,7 +258,6 @@ function initOurWorksSlider() {
 		slidesPerView: 1.35,
 		spaceBetween: 20,
 		simulateTouch: false,
-		// autoHeight: true,
 		centeredSlides: true,
 
 		breakpoints: {
@@ -269,12 +267,12 @@ function initOurWorksSlider() {
 			},
 			575: {
 				slidesPerView: 2,
-				autoHeight: false,
 				centeredSlides: false,
 			},
 			992: {
 				slidesPerView: 2,
 				spaceBetween: 40,
+				centeredSlides: false,
 			},
 		},
 
