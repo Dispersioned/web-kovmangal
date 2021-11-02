@@ -1,0 +1,141 @@
+.faq {
+	padding: 150px 0;
+
+	@media (max-width: 991px) {
+		padding: 120px 0;
+	}
+	@media (max-width: 767px) {
+		padding: 100px 0;
+	}
+
+	// .faq__body
+
+	&__body {
+	}
+
+	// .faq__content
+
+	&__content {
+	}
+
+	// .faq__heading-info
+
+	&__heading-info {
+	}
+
+	// .faq__heading
+
+	&__heading {
+	}
+
+	// .faq__list
+
+	&__list {
+		margin-top: 100px;
+		max-width: min(80%, 1200px);
+
+		@media (max-width: 991px) {
+			margin-top: 70px;
+			max-width: none;
+		}
+		@media (max-width: 767px) {
+			margin-top: 40px;
+		}
+	}
+
+	// .faq__list-item
+
+	&__list-item {
+		.faq__list-item-title {
+			border-bottom: 2px solid $black;
+		}
+
+		&:first-child {
+			.faq__list-item-title {
+				border-top: 2px solid $black;
+			}
+		}
+	}
+
+	// .faq__list-item-title
+
+	&__list-item-title {
+		position: relative;
+		display: block;
+		font-size: 32px;
+		line-height: calc(38 / 32);
+		font-weight: 600;
+		text-transform: uppercase;
+		padding: 40px 60px 40px 0;
+
+		@media (max-width: 991px) {
+			font-size: 25px;
+			padding: 25px 60px 25px 0;
+		}
+		@media (max-width: 767px) {
+			font-size: 18px;
+		}
+
+		span {
+			position: absolute;
+			left: 100%;
+			top: 50%;
+			transform: translate(-100%, -50%);
+			display: block;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: $bg-color-dark;
+			transition: all 0.3s ease;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				display: block;
+				width: 12px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $black;
+				transition: all 0.3s ease;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(90deg);
+				display: block;
+				width: 12px;
+				height: 2px;
+				border-radius: 2px;
+				background-color: $black;
+				transition: all 0.3s ease;
+			}
+		}
+
+		&._active {
+			span {
+				background-color: $fire-red;
+
+				&::after {
+					transform: translate(-50%, -50%) rotate(180deg);
+				}
+			}
+		}
+	}
+
+	// .faq__list-item-text
+
+	&__list-item-text {
+		padding: 30px 30px 40px 40px;
+		background-color: #dac9bc;
+
+		@media (max-width: 767px) {
+			padding: 15px 10px 15px 20px;
+		}
+	}
+}
