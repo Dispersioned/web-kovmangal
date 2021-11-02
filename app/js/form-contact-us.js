@@ -29,11 +29,13 @@ function contactUsFormInit() {
 		});
 	}
 
-	const inputMask = document.querySelector('.form-contact-us__input--messanger input');
+	const inputMaskContactUs = document.querySelector('.form-contact-us__input--messanger input');
+	const inputMaskFooter = document.querySelector('.form-contact-us__input--phone input');
 	const maskOptions = {
 		mask: '+7 000 000-00-00',
 	};
-	const mask = IMask(inputMask, maskOptions);
+	const mask1 = IMask(inputMaskContactUs, maskOptions);
+	const mask2 = IMask(inputMaskFooter, maskOptions);
 }
 
 contactUsFormInit();

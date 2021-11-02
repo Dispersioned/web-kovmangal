@@ -67,38 +67,39 @@
 	// .contact-us__form
 
 	&__form {
+		position: absolute;
+		left: 75%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		border: 7px solid $white;
+		padding: 35px 40px 40px 35px;
+
+		@media (max-width: 991px) {
+			position: relative;
+			top: -40px;
+			left: 50%;
+			display: inline-block;
+			max-width: 500px;
+			transform: translate(-50%, 0);
+		}
+		@media (max-width: 767px) {
+			padding: 20px 25px 30px 20px;
+		}
+		@media (max-width: 576px) {
+			top: 20px;
+			padding: 20px 15px 20px 15px;
+		}
+		@media (max-width: 479px) {
+			padding: 20px 8px 20px 8px;
+		}
 	}
 }
 
 .form-contact-us {
-	position: absolute;
-	left: 75%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
-		padding: 35px 40px 40px 35px;
 	background-color: $bg-color-dark;
-	border: 7px solid $white;
-
-	@media (max-width: 991px) {
-		position: relative;
-		top: -40px;
-		left: 50%;
-		display: inline-block;
-		max-width: 500px;
-		transform: translate(-50%, 0);
-	}
-	@media (max-width: 767px) {
-		padding: 20px 25px 30px 20px;
-	}
-	@media (max-width: 576px) {
-		top: 20px;
-		padding: 20px 15px 20px 15px;
-	}
-	@media (max-width: 479px) {
-		padding: 20px 8px 20px 8px;
-	}
+	
 
 	// .form-contact-us__heading
 
@@ -122,6 +123,7 @@
 	&__input {
 		display: flex;
 		flex-direction: column;
+		margin-top: 20px;
 
 		input {
 			border: none;
