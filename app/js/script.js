@@ -8,3 +8,4 @@
 @@include('general.js');
 @@include('form-contact-us.js');
 @@include('our-works-slider.js');
+@@include('reviews-slider.js');
