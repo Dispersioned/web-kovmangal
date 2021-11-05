@@ -277,6 +277,63 @@ body.touch *:focus {
   outline: none;
 }
 
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #fbfbfd url(../img/preloader/preloader-bg.svg) center/cover no-repeat;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 100000;
+}
+
+.preloader._loaded {
+  opacity: 0;
+}
+
+.preloader__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.preloader__logo img {
+  width: 194px;
+  height: 249px;
+}
+
+.preloader__percentage {
+  position: relative;
+  margin-top: 30px;
+  font-family: "Viaoda Libre", sans-serif;
+  font-size: 62px;
+  line-height: calc(87 / 62);
+  font-weight: 400;
+}
+
+.preloader__percentage::after {
+  content: "%";
+}
+
 .header {
   position: relative;
   position: fixed;

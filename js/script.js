@@ -1,3 +1,5 @@
+// @@
+// include('preloader.js');
 const ibgInit = function () {
 	function imgToWebp(src) {
 		const imgTypes = ['png', 'jpg', 'jpeg', 'gif', 'svg'];
