@@ -1,0 +1,50 @@
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: #fbfbfd url(../img/preloader/preloader-bg.svg) center / cover no-repeat;
+	transition: all .5s ease;
+
+	z-index: 100000;
+
+	&._loaded {
+		opacity: 0;
+	}
+
+	// .preloader__content
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	// .preloader__logo
+
+	&__logo {
+		img {
+			width: 194px;
+			height: 249px;
+		}
+	}
+
+	// .preloader__percentage
+
+	&__percentage {
+		position: relative;
+		margin-top: 30px;
+		font-family: 'Viaoda Libre', sans-serif;
+		font-size: 62px;
+		line-height: calc(87 / 62);
+		font-weight: 400;
+
+		&::after {
+			content: '%';
+		}
+	}
+}

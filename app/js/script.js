@@ -1,3 +1,5 @@
+// @@
+// include('preloader.js');
 @@include('ibg.js');
 @@include('modifiers.js');
 @@include('burger.js');
