@@ -301,6 +301,7 @@ body.touch *:focus {
 
 .preloader._loaded {
   opacity: 0;
+  visibility: hidden;
 }
 
 .preloader__content {
