@@ -2,8 +2,10 @@
 (function () {
 	// hide preloader on all imgs loaded
 	function disablePreloader() {
-		const preloader = document.querySelector('.preloader');
-		preloader.classList.add('._loaded');
+		setTimeout(function () {
+			const preloader = document.querySelector('.preloader');
+			preloader.classList.add('_loaded');
+		}, 800);
 	}
 
 	document.addEventListener('DOMContentLoaded', function (e) {
@@ -14,9 +16,9 @@
 
 		for (img of images) {
 			imgClone = new Image();
-			imgClone.onload = imgLoaded();
-			imgClone.onerror = imgLoaded();
-			imgClone.src = imgLoaded();
+			imgClone.onload = imgLoaded;
+			imgClone.onerror = imgLoaded;
+			imgClone.src = img.src;
 		}
 
 		function imgLoaded() {
