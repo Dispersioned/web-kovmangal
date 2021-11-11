@@ -1828,6 +1828,7 @@ label.checkbox span::before {
   font-weight: 600;
   text-transform: uppercase;
   padding: 40px 60px 40px 0;
+  cursor: pointer;
 }
 
 .faq__list-item-title span {

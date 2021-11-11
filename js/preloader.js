@@ -25,8 +25,6 @@
 			loadedImagesCounter++;
 			preloaderPercentage.textContent = Math.round((100 * loadedImagesCounter) / totalImagesCounter);
 
-			console.log(loadedImagesCounter, totalImagesCounter);
-
 			if (loadedImagesCounter >= totalImagesCounter) {
 				disablePreloader();
 			}
